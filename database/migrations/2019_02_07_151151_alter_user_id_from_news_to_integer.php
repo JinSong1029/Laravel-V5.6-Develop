@@ -26,7 +26,7 @@ class AlterUserIdFromNewsToInteger extends Migration
      */
     public function down()
     {
-        Schema::table('news_to_integer', function (Blueprint $table) {
+        Schema::table('news', function (Blueprint $table) {
             //
         });
     }
