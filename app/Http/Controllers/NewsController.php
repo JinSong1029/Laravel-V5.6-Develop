@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -37,6 +38,10 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         //
+        DB::table('news')->insert(
+            ['title' => $request->input('title'), 'content' => $request->input('content')]
+        );
+        return view('news.index');
     }
 
     /**
