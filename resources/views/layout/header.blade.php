@@ -13,7 +13,7 @@
                 <a class="nav-link" href="#">News Feed</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My News</a>
+                <a class="nav-link" href="{{ route('news.index') }}">My News</a>
             </li>
         </ul>
     </div>
