@@ -16,6 +16,7 @@ class NewsController extends Controller
     public function index()
     {
         $news = Newtopic::all();
+
         return view('news.index',['news'=>$news]);
     }
 
@@ -39,10 +40,9 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         //
-        DB::table('news')->insert(
-            ['title' => $request->input('title'), 'content' => $request->input('content')]
-        );
-        return view('news.index');
+        DB::table('news')->insert(['title' => $request->input('title'), 'content' => $request->input('content'), 'user_id' => 1]);
+
+        return redirect(route('news.index'));
     }
 
     /**

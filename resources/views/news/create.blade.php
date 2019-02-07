@@ -9,9 +9,9 @@
         <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
       </div>
       <div class="form-group">
-        <label for="content">Password:</label>
+        <label for="content">Content:</label>
         <input type="text" class="form-control" id="content" placeholder="Enter content" name="content">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Create</button>
     </form>
 @endsection
