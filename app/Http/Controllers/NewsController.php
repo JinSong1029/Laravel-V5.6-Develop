@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Newtopic;
 
 class NewsController extends Controller
 {
@@ -14,8 +15,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
-        return view('news.index');
+        $news = Newtopic::all();
+        return view('news.index',['news'=>$news]);
     }
 
     /**
