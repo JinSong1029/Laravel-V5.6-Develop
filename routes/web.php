@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/news/create', function () {
-    return view('news_create');
-})->name('create_news');;
+// Route::get('/news/create', function () {
+//     return view('news.create');
+// })->name('create_news');;
+Route::resource('news', 'NewsController');
