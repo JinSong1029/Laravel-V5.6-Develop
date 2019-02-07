@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/news/create', function () {
+    return view('news_create');
+});
