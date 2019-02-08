@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Newtopic;
+use App\Models\News;
 
 class NewsController extends Controller
 {
@@ -15,9 +15,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = Newtopic::all();
+        $news = News::all();
 
-        return view('news.index',['news'=>$news]);
+        return view('news.index', ['news' => $news]);
     }
 
     /**
@@ -39,7 +39,6 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
         DB::table('news')->insert(['title' => $request->input('title'), 'content' => $request->input('content'), 'user_id' => 1]);
 
         return redirect(route('news.index'));
@@ -65,6 +64,9 @@ class NewsController extends Controller
     public function edit($id)
     {
         //
+        $news = News::find($id);
+
+        return view('news.edit', ['news' => $news]);
     }
 
     /**
