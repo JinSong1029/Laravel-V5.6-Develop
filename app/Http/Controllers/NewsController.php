@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\News;
 
+
 class NewsController extends Controller
 {
     /**
@@ -89,6 +90,8 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('news')->where('id',$id)->delete();
+        return redirect(route('news.index'));
+
     }
 }
