@@ -13,6 +13,6 @@
             <label for="content">Content:</label>
             <input type="text" class="form-control" id="content" placeholder="Enter content" name="content">
         </div>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Create</button>
     </form>
 @endsection

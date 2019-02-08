@@ -39,7 +39,13 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('news')->insert(['title' => $request->input('title'), 'content' => $request->input('content'), 'user_id' => 1]);
+        //DB::table('news')->insert(['title' => $request->input('title'), 'content' => $request->input('content'), 'user_id' => 1]);
+        $news = new News;
+        $news->title = $request->title;
+        $news->content = $request->content;
+        $news->user_id = $request->user_id;
+
+        $news->save();
 
         return redirect(route('news.index'));
     }
@@ -79,6 +85,12 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $news = News::find($id);
+        $news->title = $request->title;
+        $news->content = $request->content;
+
+        $news->save();
+        return redirect(route('news.index'));
     }
 
     /**
