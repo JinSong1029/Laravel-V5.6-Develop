@@ -90,7 +90,9 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('news')->where('id',$id)->delete();
+        //DB::table('news')->where('id',$id)->delete();
+        News::destroy($id);
+        
         return redirect(route('news.index'));
 
     }
