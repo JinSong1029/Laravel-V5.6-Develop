@@ -16,14 +16,9 @@
 
     <body>
         <div class="container">
-            <!-- <nav class="navbar navbar-default"> -->
             @include('layout.header')
-            <!-- </nav> -->
-
             @yield('content')
         </div>
-
-
 
         @include('layout.footer')
     </body>

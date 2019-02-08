@@ -87,10 +87,11 @@ class NewsController extends Controller
     {
         //
         $news = News::find($id);
+
         $news->title = $request->title;
         $news->content = $request->content;
-
         $news->save();
+
         return redirect(route('news.index'));
     }
 

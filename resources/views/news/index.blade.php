@@ -15,23 +15,22 @@
 	    		@foreach ($news as $new)
 	    			<tr>
 	    				<td>
-	    					{{$new->title}}
+	    					{{ $new->title }}
 	    				</td>
 	    				<td>
-	    					{{$new->content}}
+	    					{{ $new->content }}
 	    				</td>
 	    				<td>
-                            <a href="{{ route('news.edit', ['news' => $new]) }}">Edit</a>
-                        </td>
+                <a href="{{ route('news.edit', ['news' => $new]) }}">Edit</a>
+              </td>
 	    				<td>
-	    					<form action="{{route('news.destroy',['news'=>$new->id])}}" method="POST" onsubmit="return confirm('are you sure delete?'); ">
+	    					<form action="{{ route('news.destroy', ['news' => $new->id]) }}" method="POST" onsubmit="return confirm('are you sure delete?'); ">
 
 	    						{{ csrf_field() }}
 	    						{{ method_field('DELETE') }}
-	    						
+
 	    						<button type="submit" class="btn btn-primary" style="width: 100%;" >Delete</button>
 	    					</form>
-	    					
 	    				</td>
 	    			</tr>
 	    		@endforeach
