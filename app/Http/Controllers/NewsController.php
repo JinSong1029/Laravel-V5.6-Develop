@@ -28,7 +28,6 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
         return view('news.create');
     }
 
@@ -40,7 +39,6 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //DB::table('news')->insert(['title' => $request->input('title'), 'content' => $request->input('content'), 'user_id' => 1]);
         $news = new News;
         $news->title = $request->title;
         $news->content = $request->content;
@@ -59,7 +57,6 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -70,7 +67,6 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
         $news = News::find($id);
 
         return view('news.edit', ['news' => $news]);
@@ -85,12 +81,12 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $news = News::find($id);
+
         $news->title = $request->title;
         $news->content = $request->content;
-
         $news->save();
+
         return redirect(route('news.index'));
     }
 
@@ -103,7 +99,7 @@ class NewsController extends Controller
     public function destroy($id)
     {
         News::destroy($id);
-        
+
         return redirect(route('news.index'));
     }
 }
