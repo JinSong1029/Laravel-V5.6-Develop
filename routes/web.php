@@ -11,8 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Auth::routes();
 
-Route::resource('news', 'NewsController');
+Route::group(['middleware' => ['web']], function () {
+  Route::get('/', function () {
+      return view('index');
+  });
+
+  Route::resource('news', 'NewsController');
+
+  Route::get('/home', 'HomeController@index')->name('home');
+});
